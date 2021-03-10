@@ -1,0 +1,562 @@
+body {
+
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	background-image: url("../images/misc.png");
+	background-repeat: repeat;
+	display: flex;
+	flex-direction: column;
+
+}
+
+a { color: inherit; } 
+
+h1{
+	font-size: 24px;
+}
+
+h2{
+	margin-bottom: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 20px;
+}
+
+h3{
+	margin: 0px;
+	text-align: center;
+}
+
+p {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+nav{
+	padding: 20px;
+	width: 20%;
+	height: 100vh;
+	max-width: 300px;
+	background-color: white;
+	overflow: hidden;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+
+}
+
+.nav-wrapper {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.blank{
+	height: 50vh;
+}
+
+.triangle{
+	width: 100%;
+	max-width: 320px;
+	height: 320px;
+	transform: rotate(45deg);
+	background-image: url("../images/misc-1.jpg");
+	background-repeat: repeat;
+	position: absolute;
+	bottom: -160px;
+	background-color: red;
+	left: -160px;
+	z-index: 1;
+}
+
+
+.index {
+	background-color: #E8E8E8;
+	border-radius: 50px;
+	height: auto;
+	min-height: 80vh;
+	/*padding: 20px;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	box-shadow: 10px 10px 25px white;
+	border : 2px solid white;
+	overflow: hidden;
+	margin: 20px;
+}
+
+ .dashboard {
+ 	background-image:  url(../images/bg-stars.jpg);
+ 	background-position: 70% 10%;
+ 	background-repeat: no-repeat;
+ 	background-size: 900px;
+	background-color: #E8E8E8;
+	height: auto;
+	min-height: 100vh;
+	padding-left: 20%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.main-wrapper{
+	width: 80%;
+/*	padding-left: 20%;*/
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+ .dashboard2 {
+	background-color: #E8E8E8;
+	border-radius: 0px;
+	height: auto;
+	min-height: 80vh;
+	/*padding: 20px;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	box-shadow: 10px 10px 25px white;
+	border : 2px solid white;
+	overflow: hidden;
+}
+
+
+header{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.logo{
+	width: 80%;
+}
+
+footer{
+	position: relative;
+	width: 100%;
+}
+
+
+nav .logoWrapper{
+	max-width: 250px;
+	background-color: #E8E8E8;
+	border-radius: 0px 0px 50px 0px;
+	padding: 5px 0px 5px 10px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin-right: 5px;
+}
+
+nav .logoWrapperBottom{
+	width: 100%;
+	max-width: 150px;
+	background-color: white;
+	border-radius: 50px 0px 0px 0px;
+	padding: 10px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: 40px;
+	right: 0px;
+}
+
+
+
+header .logoWrapper{
+	width: 100%;
+	max-width: 250px;
+	background-color: white;
+	border-radius: 0px 0px 50px 0px;
+	padding: 10px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+header .logoWrapper-nom{
+	width: 100%;
+	max-width: 250px;
+	min-height: 110px;
+	background-color: white;
+	border-radius: 0px 0px 0px 50px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+header .logoWrapper-menu{
+	width: 100%;
+	max-width: 300px;
+	min-height: 110px;
+	background-color: white;
+	border-radius: 0px 0px 50px 50px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.btn-disconnect{
+	width: 100%;
+}
+
+footer .logoWrapper{
+	width: 100%;
+	max-width: 150px;
+	background-color: white;
+	border-radius: 50px 0px 0px 0px;
+	padding: 10px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.formConnexion{
+	background-color: #f7f7f7;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	max-width: 450px;
+	width: 100%;
+	max-height: 350px;
+	height: 100%;
+	border : 2px solid white;
+	border-radius: 0px 0px 25px 25px;
+	position: relative;
+	top: -50px;
+	padding-bottom: 30px;
+
+}
+
+
+.white{
+	background-color: white;
+	width: 100%;
+	height:80px;
+	margin-bottom: 40px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 15px;
+}
+
+.bar{
+	width: 100%;
+	height:10px;
+	background-image: url("../images/misc-1.jpg");
+	background-repeat: repeat;
+	position: absolute;
+	bottom: 0px;
+
+
+}
+
+.form-group
+{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 5px 5px;
+  box-sizing: border-box;
+}
+
+
+
+.fiche-metier-wrapper{
+	max-width: 320px;
+	max-height: 400px;
+	margin: 35px;
+	background-color: #ffffffab;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	width: 100%;
+	height: 100%;
+	border : 2px solid white;
+	border-radius: 0px 0px 25px 25px;
+	position: relative;
+
+
+
+}
+
+.img-wrapper{
+width: 100%;
+height: 350px;
+position: relative;
+overflow: hidden;
+}
+
+.img-fiche-metier{
+
+	max-width: 100%;
+	max-height: 100%;
+	position: relative;
+	object-fit: contain;
+	width: 100%;
+}
+
+.str-wrapper{
+	padding: 5px;
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+
+}
+
+.absoluteTR{
+	position: absolute;
+	background-color: white;
+	top:0px;
+	right: 0px;
+	border-radius: 0px 0px 0px 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: 10px;
+	border-image: url('../images/misc-1.jpg') 27/  23;
+	width: 50px;
+	text-align: center;
+}
+
+.alert-danger {
+	width: 70%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #efb5b5;
+	padding: 10px 10px 0px 10px;
+}
+
+.btn-nav {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: white;
+	padding: 5px;
+	transition: 0.3s;
+}
+
+.btn-nav:hover {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #E8E8E8;
+	padding: 5px;
+
+	cursor: pointer;
+}
+
+.Welcome-str{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 25px;
+	border-bottom: solid 2px #E8E8E8;
+}
+
+.padding-bottom{
+	margin-bottom: 25px;
+
+}
+
+
+.link{
+	padding: 0px 10px 20px 10px;
+	text-decoration: none;
+}
+
+
+.fiche-metier-description{
+	display: flex;
+	width: 80%;
+	padding: 20px;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: white;
+	margin-top: 50px;
+	position: relative;
+}
+
+.img-wrapper-description{
+
+	position: relative;
+	overflow: hidden;	
+	width:100%;
+	max-width: 45%;
+	/*max-height: 400px;*/
+
+}
+
+.row{
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.column{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.padding-left{
+	padding-left: 20px;
+}
+
+.competence{
+	padding: 10px;
+	margin: 5px;
+	border: solid 2px #E8E8E8;
+	border-radius: 20px;
+	transition: 0.3s;
+
+}
+
+.competence:hover{
+
+	border: solid 2px black;
+
+
+}
+
+.competence p{
+	margin-bottom: 0px;
+}
+
+.absolute-btn{
+	position: absolute;
+	top: -40px;
+	right: 0px;
+	padding: 0px 15px 0px 15px;
+	background-color: white;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.deux{
+
+	right: 90px;
+
+}
+
+.form-group-add{
+	width: 80%;
+	padding: 20px;
+}
+
+.grisee{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: #483e3eba;
+}
+
+
+.item-wrapper {
+display: flex;
+flex-direction: column;
+width: 80%;
+background-color: white;
+padding: 20px;
+position: relative;
+}
+
+.itemPrincipal {
+	width: 100%;
+	max-width: 1400px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-weight: bold;
+	border-top : solid 1px lightgrey;
+}
+
+.itemJeux {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: space-between;
+    border-top: solid 1px lightgrey;
+    flex-basis: 100%;
+    position: relative;
+}
+
+.item {
+    width: 10%;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+}
+
+.margin-bottom{
+	margin-bottom: 25px;
+}
+
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+  }
+
+  .flex-row{
+
+    flex-direction: row;
+    justify-content: flex-start;
+
+  }
+
+  .width-70{
+  	width: 70%;
+  }
