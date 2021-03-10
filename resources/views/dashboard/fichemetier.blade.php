@@ -18,8 +18,10 @@
 		</form>
 	</div>
 
+
+
 	<div class="row">
-		<div class="img-wrapper-description"> <img class="img-fiche-metier" src="images/{{ $data->code_ROM }}.jpg"> <div class="bar"></div> </div>
+		<div class="img-wrapper-description"> <img class="img-fiche-metier" src="{{ asset("storage/$data->code_ROM") }}.jpg"> <div class="bar"></div> </div>
 
 		<div class="column padding-left">
 			<div class="str-wrapper"><p>CODE ROM : {{ $data->code_ROM }}</p></div>

@@ -8,7 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class FicheMetier extends Model
 {
 
- protected $table = 'fichemetier';
+	protected  $fillable =[
+		'code_ROM',
+		'titre',
+		'description_longue',
+		'description_courte',
+		'vues',
+
+	];
+
+ 	protected $table = 'fichemetier';
+ 	public $timestamps = false;
 
 
 }

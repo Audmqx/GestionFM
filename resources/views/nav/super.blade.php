@@ -1,6 +1,6 @@
 <nav>
 	<div class="logoWrapper">
-		<a href="{{ route('dashboard') }}"><img class="logo" src="images/logo.png"></a>
+		<a href="{{ route('dashboard') }}"><img class="logo" src="{{ asset('images/logo.png') }}"></a>
 	</div>
 	<div class="nav-wrapper">
 
@@ -10,8 +10,8 @@
 		<h3 class="padding-bottom">Bienvenue {{ Auth::user()->name }}</h3>
 
 
-		<form action="ajouter-fiche.php" method="get">
-		<button type="submit" name='creationFicheMetier' value='creationFicheMetier' class="btn-nav">Créer une fiche métier</button>
+		<form action="{{ route('creerFM') }}" method="get">
+		<button type="submit"  class="btn-nav">Créer une fiche métier</button>
 		</form>
 
 
@@ -26,7 +26,7 @@
 		</form>
 
 		<form action="{{ route('logout') }}" method="get">
-		<button type="submit" name='deconnexion' value='deconnnexion' class="btn-nav">Déconnexion</button>
+		<button type="submit" class="btn-nav">Déconnexion</button>
 		</form>
 
 	</div>
@@ -35,6 +35,6 @@
 
 
 	<div class="logoWrapperBottom">
-		<img class="logo" src="images/logo-1.png">
+		<img class="logo" src="{{ asset('images/logo-1.png') }}">
 	</div>	
 </nav>
