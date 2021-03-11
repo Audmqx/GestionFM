@@ -35,7 +35,7 @@
                     <button type="submit" class="btn-submit">Connexion</button>
             </div>
 
-             @if($errors->has('email'))
+            @if($errors->has('email'))
                 <p class="help is-danger">{{ $errors->first('email') }}</p>
             @endif
             </div>

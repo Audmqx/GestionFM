@@ -4,7 +4,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-color: white;
-	background-image: url("../images/misc.png");
+	background-image: url("../img/misc.png");
 	background-repeat: repeat;
 	display: flex;
 	flex-direction: column;
@@ -69,7 +69,7 @@ nav{
 	max-width: 320px;
 	height: 320px;
 	transform: rotate(45deg);
-	background-image: url("../images/misc-1.jpg");
+	background-image: url("../img/misc-1.jpg");
 	background-repeat: repeat;
 	position: absolute;
 	bottom: -160px;
@@ -97,7 +97,7 @@ nav{
 }
 
  .dashboard {
- 	background-image:  url(../images/bg-stars.jpg);
+ 	background-image:  url(../img/bg-stars.jpg);
  	background-position: 70% 10%;
  	background-repeat: no-repeat;
  	background-size: 900px;
@@ -276,7 +276,7 @@ footer .logoWrapper{
 .bar{
 	width: 100%;
 	height:10px;
-	background-image: url("../images/misc-1.jpg");
+	background-image: url("../img/misc-1.jpg");
 	background-repeat: repeat;
 	position: absolute;
 	bottom: 0px;
@@ -354,7 +354,7 @@ overflow: hidden;
 	flex-direction: column;
 	justify-content: center;
 	padding-top: 10px;
-	border-image: url('../images/misc-1.jpg') 27/  23;
+	border-image: url('../img/misc-1.jpg') 27/  23;
 	width: 50px;
 	text-align: center;
 }

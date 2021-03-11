@@ -16,9 +16,12 @@ Route::post('/', 'App\Http\Controllers\loginController@traitement');
 
 Route::get('/admin', '\App\Http\Controllers\DashboardController@AccesDashboard')->name('dashboard')->middleware('auth');
 
+
+
 // Route pour accèder à une fiche complète
 
 Route::get('/admin/{code_rom}', '\App\Http\Controllers\DashboardController@GetFicheMetier')->middleware('auth');
+
 
 
 // Route pour créer une fiche
@@ -26,6 +29,20 @@ Route::get('/admin/{code_rom}', '\App\Http\Controllers\DashboardController@GetFi
 Route::get('/creer-une-fiche', '\App\Http\Controllers\DashboardController@CreateFicheMetier')->name('creerFM')->middleware('auth');
 
 Route::post('/creer-une-fiche', '\App\Http\Controllers\DashboardController@TraitementFicheMetier')->middleware('auth');
+
+
+
+
+// Route pour modifier une fiche
+
+Route::get('/modifier-une-fiche','\App\Http\Controllers\ModifierFicheController@ShowFicheMetier')->name('modifierFM')->middleware('auth');
+
+Route::post('/modifier-une-fiche','\App\Http\Controllers\ModifierFicheController@TraitementFicheMetier')->middleware('auth');
+
+
+
+
+
 
 // Route pour se déconnecter
 

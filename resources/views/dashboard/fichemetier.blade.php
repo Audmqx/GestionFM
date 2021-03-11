@@ -4,9 +4,8 @@
 @section('content')
 
 <div class="fiche-metier-description">
-
 	<div class="absolute-btn deux">
-		<form action="modifier-fiche.php?fiche={{ $data->code_ROM }}" method="get">
+		<form action="{{ route('modifierFM') }}" method="get">
 		<button type="submit" name='fiche' value='{{ $data->code_ROM }}' class="btn-nav">Modifier</button>
 		</form>
 	</div>

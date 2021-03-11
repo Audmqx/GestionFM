@@ -1,6 +1,6 @@
 <nav>
     <div class="logoWrapper">
-        <img class="logo" src="images/logo.png">
+        <img class="logo" src="{{ asset('storage/logo.png') }}">
     </div>
 
     <div class="nav-wrapper">
@@ -13,6 +13,6 @@
 
 
     <div class="logoWrapperBottom">
-        <img class="logo" src="images/logo-1.png">
+        <img class="logo" src="{{ asset('storage/logo-1.png') }}">
     </div>  
 </nav>

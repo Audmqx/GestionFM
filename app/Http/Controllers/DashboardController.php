@@ -31,10 +31,11 @@ class DashboardController extends Controller
 
 
 
-	public function CreateFicheMetier(){
-       
-		
-	return view('dashboard.creerFiche');
+	public function ModifyFicheMetier(Request $request){
+
+	$data = FicheMetier::where('code_ROM', $request->fiche)->first();
+
+	return view('dashboard.modifierFiche',['data' => $data]);
 	}
 
 
@@ -67,6 +68,15 @@ class DashboardController extends Controller
 
          return redirect('/admin');
 }	
+
+
+
+	public function CreateFicheMetier(){
+       
+		
+	return view('dashboard.creerFiche');
+	}
+
 
 }
 
