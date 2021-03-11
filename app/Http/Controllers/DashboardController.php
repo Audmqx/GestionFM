@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\FicheMetier;
+use App\Models\Competencesfichemetier;
+use App\Models\Competences;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
@@ -22,21 +24,47 @@ class DashboardController extends Controller
 
 
 
+
+
+
     public function GetFicheMetier(Request $request){
         
 	$data = FicheMetier::where('code_ROM', $request->code_rom)->first();
 
-	return view('dashboard.fichemetier', ['data' => $data]);
+	// $competences = DB::table('competences')
+ //            ->join('competencesfichemetier', 'idCompetence', '=', "$request->code_rom")
+ //            // ->join('orders', 'users.id', '=', 'orders.user_id')
+ //            // ->select('users.*', 'contacts.phone', 'orders.price')
+ //            ->get();
+
+    $competences = DB::table('competences')
+     ->join('competencesfichemetier', 'competences.idCompetence', '=', 'competencesfichemetier.idCompetence')
+     ->select('competences.nomCompetence')
+     ->where('competencesfichemetier.code_ROM', $request->code_rom)
+     ->get();
+
+	return view('dashboard.fichemetier', ['data' => $data, 'competences' => $competences]);
 	}
 
 
+//  Flight::select('competences')
+//         ->whereColumn('destination_id', 'destinations.id')
+//         ->orderByDesc('arrived_at')
+//         ->limit(1)
+// )->get();
 
-	public function ModifyFicheMetier(Request $request){
+// $users = DB::table('users')
+//             ->join('contacts', 'users.id', '=', 'contacts.user_id')
+//             ->join('orders', 'users.id', '=', 'orders.user_id')
+//             ->select('users.*', 'contacts.phone', 'orders.price')
+//             ->get();
 
-	$data = FicheMetier::where('code_ROM', $request->fiche)->first();
 
-	return view('dashboard.modifierFiche',['data' => $data]);
-	}
+// 	CompetenceficheMetier::Select('competences')
+
+
+
+
 
 
 

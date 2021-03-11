@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 <div class="fiche-metier-description">
 	<div class="absolute-btn deux">
 		<form action="{{ route('modifierFM') }}" method="get">
@@ -32,7 +33,16 @@
 	<div class="column">
 	<div class="str-wrapper"><p>DESCRIPTION LONGUE : {{ $data->description_longue }}</p></div>
 
-	<!-- COMPETENCES LISTE -->
+@forelse($competences as $competence)
+		<div class="str-wrapper">
+
+		<div class="competence"><p>{{ $competence->nomCompetence }}</p></div>
+
+		</div>
+@empty
+<p> y a r </p>
+@endforelse
+
 	</div>
 
 </div>
