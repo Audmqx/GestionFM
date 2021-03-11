@@ -23,6 +23,15 @@ class ModifierFicheController extends Controller
 	}
 
 
+	public function ShowFicheMetierDesactivees(Request $request){
+
+	$listeFicheMetier = DB::table('fichemetier')->get()->where('vues','0');
+
+    return view('superadmin.fichesDesactivees', ['FicheMetier' => $listeFicheMetier]);
+	}
+
+
+
 
 
 	public function TraitementFicheMetier(Request $request){
@@ -61,6 +70,34 @@ class ModifierFicheController extends Controller
   	
     }
 
+
+
+
+	public function SoftDeleteFicheMetier(Request $request){
+
+
+	FicheMetier::where('code_ROM', $request->desactiverfiche)
+
+         ->update([
+         	'vues' => "0",
+         ]);
+
+           return redirect('/admin');
+
+	}
+
+	public function SoftRollbackFicheMetier(Request $request){
+
+
+	FicheMetier::where('code_ROM', $request->activer)
+
+         ->update([
+         	'vues' => "1",
+         ]);
+
+           return redirect('/admin');
+
+	}
 
        
 }	

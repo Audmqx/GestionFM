@@ -11,9 +11,9 @@
 	</div>
 
 	<div class="absolute-btn">
-		<form action="connexion.php" method="post">
+		<form action="{{ route('desactiverFM') }}" method="get">
 		<button type="submit" name='supprimer-fiche' value='supprimer-fiche' class="btn-nav">Supprimer</button>
-		<input name="desactiver-fiche" type="hidden" value="{{ $data->code_ROM }}">
+		<input name="desactiverfiche" type="hidden" value="{{ $data->code_ROM }}">
 		</form>
 	</div>
 

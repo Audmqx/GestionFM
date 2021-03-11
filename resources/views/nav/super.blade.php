@@ -17,8 +17,8 @@
 
 		<h2 class="Welcome-str">Super Admin menu</h2>
 
-		<form action="fiches-desactivees.php" method="get">
-		<button type="submit" name='fiche-desactive' value='fiche-desactive' class="btn-nav">Fiches désactivées</button>
+		<form action="{{ route('listeFichesDesactivees') }}" method="get">
+		<button type="submit"  class="btn-nav">Fiches désactivées</button>
 		</form>
 
 		<form action="list-admins.php" method="get">
