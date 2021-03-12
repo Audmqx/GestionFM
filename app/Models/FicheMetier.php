@@ -18,6 +18,8 @@ class FicheMetier extends Model
 	];
 
  	protected $table = 'fichemetier';
+
+ 	
  	public $timestamps = false;
 
 

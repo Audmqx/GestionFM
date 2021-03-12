@@ -19,7 +19,7 @@ class DashboardController extends Controller
         
     $listeFicheMetier = DB::table('fichemetier')->get()->where('vues','1');
 
-    return view('dashboard.admin', ['FicheMetier' => $listeFicheMetier]);
+    return view('dashboard/admin', ['FicheMetier' => $listeFicheMetier]);
 	}
 
 
@@ -30,13 +30,15 @@ class DashboardController extends Controller
 
     public function GetFicheMetier(Request $request){
         
-	$data = FicheMetier::where('code_ROM', $request->code_rom)->first();
+	$data = FicheMetier::where('code_ROM', $request->code_rom )->first();
+
 
     $competences = DB::table('competences')
      ->join('competencesfichemetier', 'competences.idCompetence', '=', 'competencesfichemetier.idCompetence')
      ->select('competences.nomCompetence')
      ->where('competencesfichemetier.code_ROM', $request->code_rom)
      ->get();
+
 
 	return view('dashboard.fichemetier', ['data' => $data, 'competences' => $competences]);
 	}

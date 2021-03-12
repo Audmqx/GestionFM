@@ -37,14 +37,6 @@ class ModifierFicheController extends Controller
 	public function TraitementFicheMetier(Request $request){
 
 
-
-		// find = par id
-	    // $fiche = FicheMetier::find($request->code_ROM);
-
-
-
-
-
 		if (!empty($request->image)) {
 			$path = $request->file('image')->storePubliclyAs(
 		    "public",
@@ -52,10 +44,6 @@ class ModifierFicheController extends Controller
 		    );
 		
 		}
-
-		// Storage::delete("public/$request->code_ROM.jpg");
-
-
 	
 		FicheMetier::where('code_ROM', $request->code_ROM)
 

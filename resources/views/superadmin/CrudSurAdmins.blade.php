@@ -6,7 +6,7 @@
 
 <div class="item-wrapper">
 	<div class="absolute-btn">
-		<form action="ajouter-admin.php" method="post">
+		<form action="{{ route('AddAdmin') }}" method="get">
 		<button type="submit" class="btn-nav">Ajouter</button>
 		</form>
 	</div>
@@ -31,13 +31,13 @@
 <div class='item'>
 <p>{{ $data->role_id }}</p></div>
 <div class='item'>
-<form action="modifier-admin.php" method="post">
-	<button type="submit" name='modifier-admin' value='<!-- MAIL -->' class="btn-nav">Modifier</button>
+<form action="{{ route('UpdateAdmin') }}" method="get">
+	<button type="submit" name='updateAdmin' value='{{ $data->email }}' class="btn-nav">Modifier</button>
 	</form>
 </div>
 
-<form action="list-admins.php" method="post">
-	<button type="submit" name='supprimer-admin' value='<!-- MAIL -->' class="btn-nav">Supprimer</button>
+<form action="{{ route('DeleteAdmin') }}" method="get">
+	<button type="submit" name='deleteAdmin' value='{{ $data->email }}' class="btn-nav">Supprimer</button>
 	</form>
 </div>
 

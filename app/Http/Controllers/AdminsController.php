@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\User;
 use App\Models\Competence;
 use App\Models\FicheMetier;
 use App\Models\Competencesfichemetier;
@@ -26,74 +28,81 @@ class AdminsController extends Controller
 
 
 
+	public function ShowAddAdmin(Request $request){
+
+         return view('superadmin.AddAdmin');
+	}	
 
 
 
+	public function AddAdmin(Request $request){
 
-//     public function GetFicheMetier(Request $request){
+        if ($request->password == $request->password_retype ) {
+   
+	        $user = new User;
+
+	        $user->name = $request->name;
+	        $user->email = $request->email;
+	        $user->password = bcrypt($request->password);
+	        $user->role_id = $request->role;
+
+	        $user->save();   
+
+	        return redirect('/liste-admins');
+        } else {
+        	return back();
+        }
+
+}
+
+
+	public function DeleteAdmin (Request $request){
+
+
+	User::where('email', $request->deleteAdmin)->delete();
+	return redirect('/liste-admins');
+
+}	
+
+
+
+    public function ShowUpdateAdmin(Request $request){
         
-// 	$data = FicheMetier::where('code_ROM', $request->code_rom)->first();
+    $Admin = DB::table('users')->get()->where('email',$request->updateAdmin)->first();
 
-//     $competences = DB::table('competences')
-//      ->join('competencesfichemetier', 'competences.idCompetence', '=', 'competencesfichemetier.idCompetence')
-//      ->select('competences.nomCompetence')
-//      ->where('competencesfichemetier.code_ROM', $request->code_rom)
-//      ->get();
-
-// 	return view('dashboard.fichemetier', ['data' => $data, 'competences' => $competences]);
-// 	}
+    return view('superadmin.UpdateAdmin', ['Admin' => $Admin]);
+	}
 
 
 
 
+	public function UpdateAdmin(Request $request){
 
-// 	public function TraitementFicheMetier(Request $request){
-
-
-// 		//FILE STORAGE pour l'image
-// 		$path = $request->file('image')->storePubliclyAs(
-// 	    "public",
-// 	    "$request->code_ROM.jpg",
-// 	    );
-
-// 		// INSERT dans la table FicheMetier
-// 	 	$fiche = new FicheMetier;
-
-//         $fiche->code_ROM = $request->code_ROM;
-//         $fiche->titre = $request->titre;
-//         $fiche->description_longue = $request->description_longue;
-//         $fiche->description_courte = $request->description_courte;
-//         $fiche->vues = "1";
-
-//  		$fiche->save();   
-
-
-//         // INSERT dans la table compétence
-
-//  		if (!empty($request->competence1)) {
-//  			$competence = new Competence;
-//  			$competence->nomCompetence = $request->competence1;
-// 			$competence->save();
-//  		}
-
- 		
-
-       
-	
-
-
-//         // $competence->save();
-
-//          return redirect('/admin');
-// }	
-
-
-
-// 	public function CreateFicheMetier(){
-       
 		
-// 	return view('dashboard.creerFiche');
-// 	}
+		if ($request->password == $request->password_retype) {
+
+			User::where('email', $request->email)
+        ->update([
+         	'name' => $request->name,
+         	'email' => $request->mail,
+         	'password' => bcrypt($request->password),
+         	'role_id' => $request->role,
+         ]);
+
+           return redirect('/liste-admins');
+
+		} else {
+
+			return back();
+
+		}
+
+
+
+  	
+    }
+
+
 
 
 }
