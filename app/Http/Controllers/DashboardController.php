@@ -54,6 +54,10 @@ class DashboardController extends Controller
 	    "$request->code_ROM.jpg",
 	    );
 
+		$path = $request->file('pdf')->storePubliclyAs(
+	    "public/pdf",
+	    "$request->code_ROM.pdf",
+	    );
 
 
 		// INSERT dans la table FicheMetier
@@ -75,6 +79,8 @@ class DashboardController extends Controller
  			$competence->nomCompetence = $request->competence1;
 			$competence->save();
  		}
+
+ 		
 
        
 	

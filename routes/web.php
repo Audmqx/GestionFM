@@ -17,10 +17,26 @@ Route::post('/', 'App\Http\Controllers\loginController@traitement');
 Route::get('/admin', '\App\Http\Controllers\DashboardController@AccesDashboard')->name('dashboard')->middleware('auth');
 
 
+// Routes accessibles seulement par le super admin
 
-// Route pour le dashbaord des fiches désactivees
+Route::group(["middleware" => ['auth', 'checkRole']], function () {
 
-Route::get('/liste-fiches-desctivees', '\App\Http\Controllers\ModifierFicheController@ShowFicheMetierDesactivees')->name('listeFichesDesactivees')->middleware(['auth', 'checkRole']);
+
+	// Route pour le dashboard des fiches désactivees
+
+	Route::get('/liste-fiches-desctivees', '\App\Http\Controllers\ModifierFicheController@ShowFicheMetierDesactivees')->name('listeFichesDesactivees');
+
+	// Route pour le crud sur les admins
+
+	Route::get('/liste-admins', '\App\Http\Controllers\AdminsController@AccesDashboard')->name('CRUDadmins');
+
+
+	  
+
+});
+
+
+
 
 
 
@@ -57,6 +73,7 @@ Route::get('/soft-delete','\App\Http\Controllers\ModifierFicheController@SoftDel
 // Route pour rollback soft delete
 
 Route::get('/soft-rollback','\App\Http\Controllers\ModifierFicheController@SoftRollbackFicheMetier')->name('softrollback')->middleware('auth');
+
 
 // Route pour delete une fiche
 

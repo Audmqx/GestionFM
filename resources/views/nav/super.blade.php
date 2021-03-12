@@ -21,8 +21,8 @@
 		<button type="submit"  class="btn-nav">Fiches désactivées</button>
 		</form>
 
-		<form action="list-admins.php" method="get">
-		<button type="submit" name='list-admins' value='list-admins' class="btn-nav">Gestion Admins</button>
+		<form action="{{ route('CRUDadmins') }}" method="get">
+		<button type="submit"  class="btn-nav">Gestion Admins</button>
 		</form>
 
 		<form action="{{ route('logout') }}" method="get">
