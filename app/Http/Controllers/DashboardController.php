@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Competence;
 use App\Models\FicheMetier;
 use App\Models\Competencesfichemetier;
 use App\Models\Competences;
@@ -31,12 +32,6 @@ class DashboardController extends Controller
         
 	$data = FicheMetier::where('code_ROM', $request->code_rom)->first();
 
-	// $competences = DB::table('competences')
- //            ->join('competencesfichemetier', 'idCompetence', '=', "$request->code_rom")
- //            // ->join('orders', 'users.id', '=', 'orders.user_id')
- //            // ->select('users.*', 'contacts.phone', 'orders.price')
- //            ->get();
-
     $competences = DB::table('competences')
      ->join('competencesfichemetier', 'competences.idCompetence', '=', 'competencesfichemetier.idCompetence')
      ->select('competences.nomCompetence')
@@ -47,41 +42,21 @@ class DashboardController extends Controller
 	}
 
 
-//  Flight::select('competences')
-//         ->whereColumn('destination_id', 'destinations.id')
-//         ->orderByDesc('arrived_at')
-//         ->limit(1)
-// )->get();
-
-// $users = DB::table('users')
-//             ->join('contacts', 'users.id', '=', 'contacts.user_id')
-//             ->join('orders', 'users.id', '=', 'orders.user_id')
-//             ->select('users.*', 'contacts.phone', 'orders.price')
-//             ->get();
-
-
-// 	CompetenceficheMetier::Select('competences')
-
-
-
-
-
 
 
 
 	public function TraitementFicheMetier(Request $request){
 
-		// $path = $request->file('image')->storeAs(
-		// 'imagesICI', "$request->code_ROM.jpg"
-		// );
 
+		//FILE STORAGE pour l'image
 		$path = $request->file('image')->storePubliclyAs(
 	    "public",
 	    "$request->code_ROM.jpg",
 	    );
 
-	    // Storage::copy("storage/app/public/$request->code_ROM.jpg", "public/images/$request->code_ROM.jpg");
 
+
+		// INSERT dans la table FicheMetier
 	 	$fiche = new FicheMetier;
 
         $fiche->code_ROM = $request->code_ROM;
@@ -90,9 +65,22 @@ class DashboardController extends Controller
         $fiche->description_courte = $request->description_courte;
         $fiche->vues = "1";
 
-       
+ 		$fiche->save();   
 
-        $fiche->save();
+
+        // INSERT dans la table compétence
+
+ 		if (!empty($request->competence1)) {
+ 			$competence = new Competence;
+ 			$competence->nomCompetence = $request->competence1;
+			$competence->save();
+ 		}
+
+       
+	
+
+
+        // $competence->save();
 
          return redirect('/admin');
 }	

@@ -13,8 +13,8 @@
 		</div>
 
 			<div class="absolute-btn deux">
-		<form action="" method="get">
-		<button type="submit" name='supprimerfiche' value='supprimer-fiche' class="btn-nav">Supprimer</button>
+		<form action="{{ route('deleteFM') }}" method="get">
+		<button type="submit" name='supprimerfiche' value='{{ $data->code_ROM }}' class="btn-nav">Supprimer</button>
 		</form>
 		</div>
 

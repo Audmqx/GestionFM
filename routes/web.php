@@ -20,7 +20,7 @@ Route::get('/admin', '\App\Http\Controllers\DashboardController@AccesDashboard')
 
 // Route pour le dashbaord des fiches désactivees
 
-Route::get('/liste-fiches-desctivees', '\App\Http\Controllers\ModifierFicheController@ShowFicheMetierDesactivees')->name('listeFichesDesactivees')->middleware('auth');
+Route::get('/liste-fiches-desctivees', '\App\Http\Controllers\ModifierFicheController@ShowFicheMetierDesactivees')->name('listeFichesDesactivees')->middleware(['auth', 'checkRole']);
 
 
 
@@ -57,6 +57,10 @@ Route::get('/soft-delete','\App\Http\Controllers\ModifierFicheController@SoftDel
 // Route pour rollback soft delete
 
 Route::get('/soft-rollback','\App\Http\Controllers\ModifierFicheController@SoftRollbackFicheMetier')->name('softrollback')->middleware('auth');
+
+// Route pour delete une fiche
+
+Route::get('/delete','\App\Http\Controllers\ModifierFicheController@DeleteFicheMetier')->name('deleteFM')->middleware('auth');
 
 
 

@@ -35,6 +35,10 @@ class LoginController extends Controller
 
 
     public function traitement(Request $request)
+
+
+
+
     {
         $credentials = $request->only('email', 'password',);
         $remember = $request->only('remember');

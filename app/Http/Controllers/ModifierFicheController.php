@@ -99,6 +99,17 @@ class ModifierFicheController extends Controller
 
 	}
 
+
+
+	public function DeleteFicheMetier(Request $request){
+
+
+	FicheMetier::where('code_ROM', $request->supprimerfiche)->delete();
+	return redirect('/liste-fiches-desctivees');
+
+
+
+	}
        
 }	
 
